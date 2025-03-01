@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Notes</title>
+    <link rel="stylesheet" href="/epic-notes/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="/epic-notes/manifest.json">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="projects-section">
+                <h3>Projects</h3>
+                <button id="new-project">New Project</button>
+                <button id="about-btn">About</button>
+            </div>
+            <div class="notes-tree" id="notes-tree"></div>
+        </div>
+        
+        <div class="main-content">
+            <div class="toolbar">
+                <div class="format-tools">
+                    <button class="format-btn" data-command="bold">B</button>
+                    <button class="format-btn" data-command="italic">I</button>
+                    <button class="format-btn" data-command="underline">U</button>
+                    <select id="style-select">
+                        <option value="normal">Paragraph</option>
+                        <option value="h1">Heading 1</option>
+                        <option value="h2">Heading 2</option>
+                    </select>
+                    <select id="preset-formats">
+                        <option value="normal">Normal</option>
+                        <option value="screenplay">Screenplay</option>
+                        <option value="novel">Novel</option>
+                        <option value="blog">Blog</option>
+                    </select>
+                </div>
+                <div class="stats">
+                    <span id="word-count">0 words</span>
+                    <button id="expand-stats">Stats</button>
+                </div>
+                <div class="export-tools">
+                    <button id="print-btn">Print</button>
+                    <button id="export-pdf">Export PDF</button>
+                </div>
+            </div>
+            
+            <div class="editor-container">
+                <div class="editor" contenteditable="true" id="editor"></div>
+                <div class="save-status" id="save-status">Saved</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="about-modal" style="display: none;">
+        <div class="modal-content">
+            <h2>About Epic Notes</h2>
+            <p><strong>Created:</strong> February 28, 2025</p>
+            <p><strong>Authors:</strong> Adam Rolfson and Grok 3</p>
+            <p><strong>Version:</strong> 0.0.3</p>
+            <p>&copy; 2025 Adam Rolfson and Grok 3. All rights reserved.</p>
+            <button id="close-about">Close</button>
+        </div>
+    </div>
+    <script src="/epic-notes/app.js"></script>
+</body>
+</html>
