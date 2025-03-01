@@ -1,20 +1,15 @@
-self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open('epic-notes-v1').then((cache) => {
-            return cache.addAll([
-                './',
-                './index.html',
-                './styles.css',
-                './app.js'
-            ]);
-        })
-    );
-});
-
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
-        })
-    );
-});
+{
+    "name": "Epic Notes",
+    "short_name": "Epic Notes",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "./icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
