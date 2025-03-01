@@ -35,12 +35,7 @@ class EpicNotesApp {
         this.saveStatus = document.getElementById('save-status');
         this.notesTreeElement = document.getElementById('notes-tree');
         this.aboutModal = document.getElementById('about-modal');
-        const toggleBtn = document.createElement('button');
-        toggleBtn.className = 'mode-toggle';
-        toggleBtn.innerHTML = '<i class="fas fa-book"></i>';
-        toggleBtn.title = 'Toggle Pagination';
-        document.querySelector('.toolbar').appendChild(toggleBtn);
-        this.modeToggle = toggleBtn;
+        this.modeToggle = document.querySelector('.mode-toggle');
     }
 
     initEventListeners() {
