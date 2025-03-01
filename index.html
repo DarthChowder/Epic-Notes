@@ -11,43 +11,46 @@
 </head>
 <body>
     <div class="app-container">
-        <div class="sidebar">
-            <div class="projects-section">
-                <h3>Projects</h3>
-                <button id="new-project">New Project</button>
-                <button id="about-btn">About</button>
+        <div class="toolbar">
+            <div class="traffic-lights">
+                <span class="circle red"></span>
+                <span class="circle yellow"></span>
+                <span class="circle green"></span>
             </div>
-            <div class="notes-tree" id="notes-tree"></div>
+            <div class="format-tools">
+                <button class="format-btn" data-command="bold"><i class="fas fa-bold"></i></button>
+                <button class="format-btn" data-command="italic"><i class="fas fa-italic"></i></button>
+                <button class="format-btn" data-command="underline"><i class="fas fa-underline"></i></button>
+                <select id="style-select">
+                    <option value="normal">Paragraph</option>
+                    <option value="h1">Heading 1</option>
+                    <option value="h2">Heading 2</option>
+                </select>
+                <select id="preset-formats">
+                    <option value="normal">Normal</option>
+                    <option value="screenplay">Screenplay</option>
+                    <option value="novel">Novel</option>
+                    <option value="blog">Blog</option>
+                </select>
+            </div>
+            <div class="stats">
+                <span id="word-count">0 words</span>
+                <button id="expand-stats"><i class="fas fa-info-circle"></i></button>
+            </div>
+            <div class="export-tools">
+                <button id="print-btn"><i class="fas fa-print"></i></button>
+                <button id="export-pdf"><i class="fas fa-file-pdf"></i></button>
+            </div>
+            <button class="mode-toggle"><i class="fas fa-book"></i></button>
         </div>
-        
-        <div class="main-content">
-            <div class="toolbar">
-                <div class="format-tools">
-                    <button class="format-btn" data-command="bold">B</button>
-                    <button class="format-btn" data-command="italic">I</button>
-                    <button class="format-btn" data-command="underline">U</button>
-                    <select id="style-select">
-                        <option value="normal">Paragraph</option>
-                        <option value="h1">Heading 1</option>
-                        <option value="h2">Heading 2</option>
-                    </select>
-                    <select id="preset-formats">
-                        <option value="normal">Normal</option>
-                        <option value="screenplay">Screenplay</option>
-                        <option value="novel">Novel</option>
-                        <option value="blog">Blog</option>
-                    </select>
+        <div class="content-area">
+            <div class="sidebar">
+                <div class="projects-section">
+                    <button id="new-project"><i class="fas fa-plus"></i> New Project</button>
+                    <button id="about-btn"><i class="fas fa-info"></i> About</button>
                 </div>
-                <div class="stats">
-                    <span id="word-count">0 words</span>
-                    <button id="expand-stats">Stats</button>
-                </div>
-                <div class="export-tools">
-                    <button id="print-btn">Print</button>
-                    <button id="export-pdf">Export PDF</button>
-                </div>
+                <div class="notes-tree" id="notes-tree"></div>
             </div>
-            
             <div class="editor-container">
                 <div class="editor" contenteditable="true" id="editor"></div>
                 <div class="save-status" id="save-status">Saved</div>
@@ -60,7 +63,7 @@
             <p><strong>Created:</strong> February 28, 2025</p>
             <p><strong>Authors:</strong> Adam Rolfson and Grok 3</p>
             <p><strong>Version:</strong> 0.0.3</p>
-            <p>&copy; 2025 Adam Rolfson and Grok 3. All rights reserved.</p>
+            <p>© 2025 Adam Rolfson and Grok 3. All rights reserved.</p>
             <button id="close-about">Close</button>
         </div>
     </div>
