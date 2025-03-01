@@ -273,17 +273,19 @@ class EpicNotesApp {
     loadCustomTheme(themeData) {
         const style = document.createElement('style');
         style.textContent = `
-            .app-container { background: ${themeData.background}; }
-            .sidebar { background: ${themeData.sidebar}; }
-            .editor { color: ${themeData.text}; }
+            .toolbar { background: ${themeData.toolbar}; }
+            .file-organizer { background: ${themeData.fileOrganizer}; }
+            .editor { background: ${themeData.editor}; }
+            .editor-content { color: ${themeData.text}; }
         `;
         document.head.appendChild(style);
     }
 }
 
 const customTheme = {
-    background: '#f0f0f0',
-    sidebar: '#e0e0e0',
+    toolbar: 'linear-gradient(to bottom, #e8ecef, #d1d5d8)',
+    fileOrganizer: '#f5f5f7',
+    editor: '#ffffff',
     text: '#333333'
 };
 
@@ -291,5 +293,5 @@ const app = new EpicNotesApp();
 // app.loadCustomTheme(customTheme);
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/epic-notes/sw.js');
+    navigator.serviceWorker.register('./sw.js');
 }
