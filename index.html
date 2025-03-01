@@ -4,58 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Epic Notes</title>
-    <link rel="stylesheet" href="/epic-notes/styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="manifest" href="/epic-notes/manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-    <div class="app-container">
-        <div class="toolbar">
-            <div class="traffic-lights">
-                <span class="circle red"></span>
-                <span class="circle yellow"></span>
-                <span class="circle green"></span>
-            </div>
-            <div class="format-tools">
-                <button class="format-btn" data-command="bold"><i class="fas fa-bold"></i></button>
-                <button class="format-btn" data-command="italic"><i class="fas fa-italic"></i></button>
-                <button class="format-btn" data-command="underline"><i class="fas fa-underline"></i></button>
-                <select id="style-select">
-                    <option value="normal">Paragraph</option>
-                    <option value="h1">Heading 1</option>
-                    <option value="h2">Heading 2</option>
-                </select>
-                <select id="preset-formats">
-                    <option value="normal">Normal</option>
-                    <option value="screenplay">Screenplay</option>
-                    <option value="novel">Novel</option>
-                    <option value="blog">Blog</option>
-                </select>
-            </div>
-            <div class="stats">
-                <span id="word-count">0 words</span>
-                <button id="expand-stats"><i class="fas fa-info-circle"></i></button>
-            </div>
-            <div class="export-tools">
-                <button id="print-btn"><i class="fas fa-print"></i></button>
-                <button id="export-pdf"><i class="fas fa-file-pdf"></i></button>
-            </div>
+    <div class="toolbar">
+        <div class="toolbar-group traffic-lights">
+            <span class="circle red"></span>
+            <span class="circle yellow"></span>
+            <span class="circle green"></span>
+        </div>
+        <div class="toolbar-divider"></div>
+        <div class="toolbar-group format-tools">
+            <button class="format-btn" data-command="bold"><i class="fas fa-bold"></i></button>
+            <button class="format-btn" data-command="italic"><i class="fas fa-italic"></i></button>
+            <button class="format-btn" data-command="underline"><i class="fas fa-underline"></i></button>
+            <select id="style-select">
+                <option value="normal">Paragraph</option>
+                <option value="h1">Heading 1</option>
+                <option value="h2">Heading 2</option>
+            </select>
+            <select id="preset-formats">
+                <option value="normal">Normal</option>
+                <option value="screenplay">Screenplay</option>
+                <option value="novel">Novel</option>
+                <option value="blog">Blog</option>
+            </select>
+        </div>
+        <div class="toolbar-divider"></div>
+        <div class="toolbar-group stats">
+            <span id="word-count">0 words</span>
+            <button id="expand-stats"><i class="fas fa-info-circle"></i></button>
+        </div>
+        <div class="toolbar-divider"></div>
+        <div class="toolbar-group export-tools">
+            <button id="print-btn"><i class="fas fa-print"></i></button>
+            <button id="export-pdf"><i class="fas fa-file-pdf"></i></button>
+        </div>
+        <div class="toolbar-divider"></div>
+        <div class="toolbar-group mode-toggle-group">
             <button class="mode-toggle"><i class="fas fa-book"></i></button>
         </div>
-        <div class="content-area">
-            <div class="sidebar">
-                <div class="projects-section">
-                    <button id="new-project"><i class="fas fa-plus"></i> New Project</button>
-                    <button id="about-btn"><i class="fas fa-info"></i> About</button>
-                </div>
-                <div class="notes-tree" id="notes-tree"></div>
-            </div>
-            <div class="editor-container">
-                <div class="editor" contenteditable="true" id="editor"></div>
-                <div class="save-status" id="save-status">Saved</div>
-            </div>
+    </div>
+    <div class="file-organizer">
+        <div class="projects-section">
+            <button id="new-project"><i class="fas fa-plus"></i> New Project</button>
+            <button id="about-btn"><i class="fas fa-info"></i> About</button>
         </div>
+        <div class="notes-tree" id="notes-tree"></div>
+    </div>
+    <div class="editor">
+        <div class="editor-content" contenteditable="true" id="editor"></div>
+        <div class="save-status" id="save-status">Saved</div>
     </div>
     <div class="modal" id="about-modal" style="display: none;">
         <div class="modal-content">
@@ -67,6 +69,6 @@
             <button id="close-about">Close</button>
         </div>
     </div>
-    <script src="/epic-notes/app.js"></script>
+    <script src="./app.js"></script>
 </body>
 </html>
