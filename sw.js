@@ -2,10 +2,10 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('epic-notes-v1').then((cache) => {
             return cache.addAll([
-                '/epic-notes/',
-                '/epic-notes/index.html',
-                '/epic-notes/styles.css',
-                '/epic-notes/app.js'
+                './',
+                './index.html',
+                './styles.css',
+                './app.js'
             ]);
         })
     );
